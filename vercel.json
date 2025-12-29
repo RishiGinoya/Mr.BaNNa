@@ -1,27 +1,13 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "BaNNa/wsgi.py",
-        "use": "@vercel/python"
-      },
-      {
-        "src": "staticfiles/**",
-        "use": "@vercel/static"
-      }
-    ],
+    "builds": [{
+        "src": "banna_platform/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    }],
     "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/staticfiles/$1"
-      },
-      {
-        "src": "/media/(.*)",
-        "dest": "/media/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "BaNNa/wsgi.py"
-      }
+        {
+            "src": "/(.*)",
+            "dest": "banna_platform/wsgi.py"
+        }
     ]
-  }
+}
