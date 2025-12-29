@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Pricing Plans - Mr.BaNNa{% endblock %}
+
+{% block content %}
+<section class="pricing-section" style="padding: 100px 20px; min-height: 100vh; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+            <h1 style="font-size: 48px; font-weight: 800; color: white; margin-bottom: 20px;">51 by GoldmanMrBaNNa</h1>
+            <p style="color: #aaa; font-size: 20px;">Choose the plan that works best for you</p>
+        </div>
+        
+        <!-- Pricing Plan Button -->
+        <div style="max-width: 500px; margin: 0 auto 60px;">
+            <button onclick="openPricingModal()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 18px 30px; border-radius: 12px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.3s; width: 100%;">
+                View Pricing Plans
+            </button>
+        </div>
+        
+        <!-- Pricing Modal -->
+        <div id="pricingModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 9999; justify-content: center; align-items: center; overflow-y: auto; padding: 20px;">
+            <div style="background: white; border-radius: 20px; padding: 40px 30px; max-width: 450px; width: 90%; position: relative; text-align: center; margin: auto;">
+                <button onclick="closePricingModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; font-size: 28px; cursor: pointer; color: #666; line-height: 1;">×</button>
+                
+                <h3 style="color: #1a1a2e; font-size: 24px; font-weight: 700; margin-bottom: 20px;">Choose Your Plan</h3>
+                
+                <p style="color: #666; font-size: 14px; margin-bottom: 15px;">Select the plan that works best for you:</p>
+                
+                <!-- Telegram Channel Link -->
+                <div style="background: #f0f7ff; border: 2px solid #667eea; border-radius: 10px; padding: 12px 15px; margin-bottom: 20px;">
+                    <p style="color: #1a1a2e; font-size: 13px; font-weight: 600; margin-bottom: 6px;">📺 Want to see how it works?</p>
+                    <a href="https://t.me/mrbannaindicator" target="_blank" style="color: #667eea; font-size: 14px; font-weight: 700; text-decoration: none;">
+                        Join our Telegram Channel →
+                    </a>
+                </div>
+                
+                <!-- Monthly Plan Option -->
+                <div onclick="selectPlan('monthly')" style="background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer; transition: all 0.3s; border: 2px solid transparent;">
+                    <div style="color: #667eea; font-size: 16px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase;">Monthly</div>
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 5px;">
+                        <div style="font-size: 36px; font-weight: 900; color: #1a1a2e;">$99</div>
+                        <div style="color: #999; font-size: 24px;">|</div>
+                        <div style="font-size: 36px; font-weight: 900; color: #1a1a2e;">₹9,600</div>
+                    </div>
+                    <div style="color: #666; font-size: 14px;">per month</div>
+                </div>
+                
+                <!-- Yearly Plan Option -->
+                <div onclick="selectPlan('yearly')" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; cursor: pointer; transition: all 0.3s; position: relative;">
+                    <div style="position: absolute; top: -8px; right: 15px; background: #10b981; color: white; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 700;">BEST VALUE</div>
+                    <div style="color: white; font-size: 16px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase;">Yearly</div>
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 5px;">
+                        <div style="font-size: 36px; font-weight: 900; color: white;">$999</div>
+                        <div style="color: rgba(255,255,255,0.6); font-size: 24px;">|</div>
+                        <div style="font-size: 36px; font-weight: 900; color: white;">₹96,000</div>
+                    </div>
+                    <div style="color: rgba(255,255,255,0.9); font-size: 14px; margin-bottom: 8px;">per year</div>
+                    <div style="background: rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 8px; display: inline-block; font-weight: 600; font-size: 12px;">
+                        💰 Save $189 / ₹15,800 per year!
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Payment Section -->
+        <div id="payment-section" style="background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 60px 40px; backdrop-filter: blur(10px); margin-top: 60px;">
+            <h2 style="color: white; font-size: 36px; font-weight: 800; margin-bottom: 40px; text-align: center;">Choose Payment Method</h2>
+            
+            <!-- Payment Method Buttons -->
+            <div style="max-width: 500px; margin: 0 auto 40px; display: flex; flex-direction: column; gap: 15px;">
+                <button onclick="openPaymentModal('upi-id', 'Pay via UPI ID', 'urmi@icici')" style="background: #2563eb; color: white; border: none; padding: 18px 30px; border-radius: 12px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.3s; width: 100%;">
+                    Pay via UPI ID
+                </button>
+                
+                <button onclick="openPaymentModal('upi-qr', 'Pay via UPI QR Code', 'urmi@icici')" style="background: #2563eb; color: white; border: none; padding: 18px 30px; border-radius: 12px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.3s; width: 100%;">
+                    Pay via UPI QR Code
+                </button>
+                
+                <button onclick="openPaymentModal('usdt-trc20', 'Pay via USDT (TRC20)', 'THQFniXzBPuwp9BDEfgEssZGWTp2sYPKQr')" style="background: #2563eb; color: white; border: none; padding: 18px 30px; border-radius: 12px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.3s; width: 100%;">
+                    Pay via USDT (TRC20)
+                </button>
+            </div>
+            
+            <!-- Payment Modal -->
+            <div id="paymentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 9999; justify-content: center; align-items: center;">
+                <div style="background: white; border-radius: 20px; padding: 40px 30px; max-width: 400px; width: 90%; position: relative; text-align: center;">
+                    <button onclick="closePaymentModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; font-size: 28px; cursor: pointer; color: #666; line-height: 1;">×</button>
+                    
+                    <h3 id="modalTitle" style="color: #1a1a2e; font-size: 24px; font-weight: 700; margin-bottom: 20px;">Pay via USDT (TRC20)</h3>
+                    
+                    <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Please copy the address or scan the QR code:</p>
+                    
+                    <!-- QR Code -->
+                    <div id="qrCodeSection" style="background: #f5f5f5; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                        <div id="qrCodeContainer" style="background: white; padding: 15px; border-radius: 10px; display: inline-block;">
+                            <img id="qrCodeImage" src="" alt="QR Code" style="width: 200px; height: 200px; display: block;">
+                        </div>
+                    </div>
+                    
+                    <!-- Address -->
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                        <p style="color: #666; font-size: 12px; margin-bottom: 8px; font-weight: 600;">Address</p>
+                        <p id="paymentAddress" style="color: #1a1a2e; font-size: 13px; font-weight: 700; word-break: break-all; line-height: 1.5; margin-bottom: 12px;">THQFniXzBPuwp9BDEfgEssZGWTp2sYPKQr</p>
+                        <p id="networkInfo" style="color: #666; font-size: 11px; margin-bottom: 12px;">Network: Tron (TRC20)</p>
+                        <button onclick="copyModalAddress()" style="background: #2563eb; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%;">
+                            Copy Address
+                        </button>
+                        <span id="modalCopied" style="color: #10b981; font-size: 12px; display: none; margin-top: 8px; display: block;">Copied!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Telegram Contact Section -->
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 40px; text-align: center;">
+                <h3 style="color: white; font-size: 28px; font-weight: 700; margin-bottom: 20px;">📱 After Payment</h3>
+                <p style="color: white; font-size: 18px; line-height: 1.8; margin-bottom: 30px;">
+                    Once you've completed the payment, contact us on Telegram with your transaction details to verify and get instant access!
+                </p>
+                <a href="https://t.me/GoldManMrBaNNa51" target="_blank" style="display: inline-block; padding: 18px 50px; background: white; color: #667eea; text-decoration: none; border-radius: 10px; font-size: 20px; font-weight: 700; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px;">
+                    💬 Contact on Telegram
+                </a>
+                <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin-top: 20px;">
+                    Send your payment screenshot and transaction ID<br>We'll verify and activate your access within minutes!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @media (max-width: 768px) {
+        section[class*="pricing"] > div > div:nth-child(2) {
+            grid-template-columns: 1fr !important;
+        }
+        div[style*="transform: scale(1.05)"] {
+            transform: scale(1) !important;
+        }
+        section h1 {
+            font-size: 32px !important;
+        }
+        section h2 {
+            font-size: 24px !important;
+        }
+        div[style*="font-size: 64px"] {
+            font-size: 48px !important;
+        }
+        div[style*="padding: 60px 40px"] {
+            padding: 30px 20px !important;
+        }
+        div[style*="padding: 40px"] {
+            padding: 30px 20px !important;
+        }
+        div[style*="padding: 30px"] {
+            padding: 20px 15px !important;
+        }
+        #paymentModal > div {
+            padding: 30px 20px !important;
+            width: 95% !important;
+        }
+        #modalTitle {
+            font-size: 20px !important;
+        }
+        button[style*="padding: 18px 30px"] {
+            font-size: 16px !important;
+            padding: 15px 20px !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        section h1 {
+            font-size: 28px !important;
+        }
+        div[style*="font-size: 64px"],
+        div[style*="font-size: 48px"] {
+            font-size: 36px !important;
+        }
+        a[style*="padding: 18px 50px"],
+        a[style*="padding: 20px 60px"] {
+            padding: 15px 30px !important;
+            font-size: 16px !important;
+        }
+        #paymentModal > div {
+            padding: 25px 15px !important;
+        }
+        #qrCodeImage {
+            width: 180px !important;
+            height: 180px !important;
+        }
+        button[style*="padding: 18px 30px"] {
+            font-size: 15px !important;
+            padding: 14px 18px !important;
+        }
+        #pricingModal div[style*="font-size: 36px"] {
+            font-size: 28px !important;
+        }
+        #pricingModal div[style*="gap: 15px"] {
+            gap: 8px !important;
+        }
+    }
+    
+    button[style*="background: #2563eb"]:hover {
+        background: #1d4ed8 !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    }
+    
+    #pricingModal div[onclick]:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+</style>
+
+<script>
+const paymentData = {
+    'upi-id': {
+        address: 'urmi@icici',
+        network: 'UPI (India)',
+        qrImage: ''
+    },
+    'upi-qr': {
+        address: 'urmi@icici',
+        network: 'UPI QR Code',
+        qrImage: '{% static "images/upi-qr.png" %}'
+    },
+    'usdt-trc20': {
+        address: 'THQFniXzBPuwp9BDEfgEssZGWTp2sYPKQr',
+        network: 'Tron (TRC20)',
+        qrImage: '{% static "images/crypto-qr.png" %}'
+    }
+};
+
+let currentAddress = '';
+
+function openPricingModal() {
+    const modal = document.getElementById('pricingModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closePricingModal() {
+    const modal = document.getElementById('pricingModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function selectPlan(plan) {
+    closePricingModal();
+    // Scroll to payment section
+    document.getElementById('payment-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function openPaymentModal(method, title, address) {
+    const modal = document.getElementById('paymentModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const paymentAddress = document.getElementById('paymentAddress');
+    const networkInfo = document.getElementById('networkInfo');
+    const qrCodeImage = document.getElementById('qrCodeImage');
+    const qrCodeSection = document.getElementById('qrCodeSection');
+    
+    const data = paymentData[method];
+    currentAddress = data.address;
+    
+    modalTitle.textContent = title;
+    paymentAddress.textContent = data.address;
+    networkInfo.textContent = 'Network: ' + data.network;
+    
+    // Show or hide QR code section based on whether QR image exists
+    if (data.qrImage && data.qrImage !== '') {
+        qrCodeImage.src = data.qrImage;
+        qrCodeSection.style.display = 'block';
+    } else {
+        qrCodeSection.style.display = 'none';
+    }
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closePaymentModal() {
+    const modal = document.getElementById('paymentModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    
+    // Reset copied message
+    const copiedElement = document.getElementById('modalCopied');
+    copiedElement.style.display = 'none';
+}
+
+function copyModalAddress() {
+    navigator.clipboard.writeText(currentAddress).then(function() {
+        const copiedElement = document.getElementById('modalCopied');
+        copiedElement.style.display = 'block';
+        setTimeout(function() {
+            copiedElement.style.display = 'none';
+        }, 2000);
+    });
+}
+
+// Close modal on outside click
+document.addEventListener('click', function(event) {
+    const paymentModal = document.getElementById('paymentModal');
+    const pricingModal = document.getElementById('pricingModal');
+    
+    if (event.target === paymentModal) {
+        closePaymentModal();
+    }
+    if (event.target === pricingModal) {
+        closePricingModal();
+    }
+});
+</script>
+{% endblock %}

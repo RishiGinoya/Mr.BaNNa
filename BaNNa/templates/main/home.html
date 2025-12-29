@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-word">TRADE</span>
+                <span class="hero-word">SMARTER</span>
+                <span class="hero-word">WITH</span>
+                <span class="hero-word">MR.BANNA</span>
+            </h1>
+            <a href="{% url 'pricing' %}" class="btn-hero">GET ACCESS</a>
+            <p class="hero-subtitle">Maximize your trades in stocks, forex and crypto with advanced tools and insights.</p>
+        </div>
+        <div class="hero-image">
+            <img src="{% static 'images/laptop-chart.png' %}" alt="Trading Chart">
+        </div>
+        <div class="hero-partners">
+            <div class="partner-logo">
+                <span style="font-size: 32px; font-weight: 800; color: #fff; opacity: 0.7;">TradingView</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Indicator Section -->
+<section class="indicators-section tradingview-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 style="word-wrap: break-word; overflow-wrap: break-word;">51 by GoldmanMrBaNNa</h2>
+            <p style="color: #aaa; font-size: 18px; margin-top: 20px;">Premium TradingView Indicator for Professional Traders</p>
+        </div>
+        
+        <div style="max-width: 800px; margin: 40px auto; text-align: center;">
+            <div class="indicator-card" style="background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 40px;">
+                <div style="margin-bottom: 30px;">
+                    <img src="{% static 'images/indicator-preview.png' %}" alt="51 by GoldmanMrBaNNa" style="width: 100%; max-width: 600px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                </div>
+                
+                <h3 style="font-size: 36px; font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; word-wrap: break-word; overflow-wrap: break-word;">
+                    51 by GoldmanMrBaNNa
+                </h3>
+                
+                <div style="color: #aaa; font-size: 18px; line-height: 1.8; margin-bottom: 30px; text-align: left;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <strong style="color: #667eea;">📊 Advanced Buy/Sell Signals</strong> – Precision entry and exit points
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <strong style="color: #667eea;">🎯 Multi-Timeframe Analysis</strong> – Works on all timeframes
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <strong style="color: #667eea;">💹 All Markets Supported</strong> – Stocks, Forex, Crypto
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <strong style="color: #667eea;">🔔 Real-Time Alerts</strong> – Never miss a trading opportunity
+                        </li>
+                        <!--
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <strong style="color: #667eea;">📈 Risk Management Tools</strong> – Built-in stop loss and take profit levels
+                        </li>
+                        -->
+                    </ul>
+                </div>
+                
+                <!-- Telegram Channel Banner -->
+                <div style="background: linear-gradient(135deg, #229ED9 0%, #0088cc 100%); border-radius: 15px; padding: 20px 25px; margin-top: 30px; text-align: center;">
+                    <p style="color: white; font-size: 16px; font-weight: 600; margin-bottom: 10px;">📺 Want to see how it works?</p>
+                    <a href="https://t.me/mrbannaindicator" target="_blank" style="color: white; font-size: 18px; font-weight: 700; text-decoration: none; border-bottom: 2px solid white;">
+                        Join our Telegram Channel →
+                    </a>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <h4 style="color: white; font-size: 24px; margin-bottom: 20px;">Choose Your Plan</h4>
+                    <div class="pricing-plans-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+                        <div style="background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(102, 126, 234, 0.3); border-radius: 15px; padding: 30px;">
+                            <div style="color: #667eea; font-size: 16px; font-weight: 600; margin-bottom: 15px;">MONTHLY</div>
+                            <div style="margin-bottom: 15px;">
+                                <div style="font-size: 56px; font-weight: 900; color: white; line-height: 1; margin-bottom: 8px;">$99</div>
+                                <div style="font-size: 40px; font-weight: 800; color: rgba(255,255,255,0.8); line-height: 1;">₹9,600</div>
+                            </div>
+                            <div style="color: #aaa; font-size: 14px;">per month</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 30px; position: relative;">
+                            <div style="position: absolute; top: -10px; right: 20px; background: #10b981; color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 700;">BEST VALUE</div>
+                            <div style="color: white; font-size: 16px; font-weight: 600; margin-bottom: 15px;">YEARLY</div>
+                            <div style="margin-bottom: 15px;">
+                                <div style="font-size: 56px; font-weight: 900; color: white; line-height: 1; margin-bottom: 8px;">$999</div>
+                                <div style="font-size: 40px; font-weight: 800; color: rgba(255,255,255,0.9); line-height: 1;">₹96,000</div>
+                            </div>
+                            <div style="color: rgba(255,255,255,0.8); font-size: 14px; margin-bottom: 8px;">per year</div>
+                            <div style="color: white; font-size: 12px; margin-top: 10px; font-weight: 600;">Save $189 / ₹15,800 per year!</div>
+                        </div>
+                    </div>
+                    <a href="{% url 'pricing' %}" style="display: inline-block; padding: 18px 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 10px; font-size: 20px; font-weight: 700; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px;">
+                        Get Started Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Trade Smarter?</h2>
+        <p>Join professional traders using 51 by GoldmanMrBaNNa to maximize their profits.</p>
+        <a href="{% url 'pricing' %}" class="btn-cta">VIEW PRICING & GET ACCESS</a>
+    </div>
+</section>
+
+<style>
+    @media (max-width: 768px) {
+        .pricing-plans-grid {
+            grid-template-columns: 1fr !important;
+        }
+        .indicator-card h3 {
+            font-size: 28px !important;
+        }
+        .indicator-card {
+            padding: 30px 20px !important;
+        }
+        .section-header h2 {
+            font-size: 28px !important;
+            padding: 0 10px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .section-header h2 {
+            font-size: 24px !important;
+            padding: 0 10px;
+        }
+        .indicator-card h3 {
+            font-size: 24px !important;
+        }
+    }
+</style>
+{% endblock %}

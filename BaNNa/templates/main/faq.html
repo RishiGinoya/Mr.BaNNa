@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block title %}FAQ - Mr.BaNNa{% endblock %}
+
+{% block content %}
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about 51 by GoldmanMrBaNNa</p>
+        </div>
+        
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How can I see the indicator in action?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Join our Telegram channel to see live demonstrations, performance updates, and learn how the indicator works: <a href="https://t.me/mrbannaindicator" target="_blank" style="color: #667eea; font-weight: 700;">t.me/mrbannaindicator</a></p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is 51 by GoldmanMrBaNNa?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>51 by GoldmanMrBaNNa is a premium TradingView indicator designed for professional traders. It provides advanced buy/sell signals, multi-timeframe analysis, and works across all markets including stocks, forex, and crypto.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What markets does it work on?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The indicator works on all markets including stocks, forex, cryptocurrencies, and commodities across any timeframe from 1-minute to monthly charts.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What's the difference between Monthly and Yearly plans?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Both plans give you full access to 51 by GoldmanMrBaNNa. The Monthly plan is $99/month, while the Yearly plan is $999/year (saving you $189 annually). The Yearly plan also includes VIP status and lifetime updates.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I get access after payment?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>After making payment via UPI or Crypto, contact us on Telegram with your transaction details. We'll verify your payment and activate your access within minutes.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What payment methods do you accept?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We accept UPI payments (urmi@icici) and cryptocurrency payments via TRC20 (USDT). Simply scan the QR code or copy the payment address from our pricing page.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do I need prior trading experience?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>While our indicator is user-friendly, we recommend having basic trading knowledge. The indicator provides clear buy/sell signals with risk management tools to help you trade effectively.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can I use it on multiple devices?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Once you have access to the TradingView indicator, you can use it on any device where you log into your TradingView account - desktop, mobile, or tablet.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you offer support?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We provide 24/7 priority support via Telegram. Our team is always available to help with setup, answer questions, and provide trading guidance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = this.querySelector('.faq-icon');
+            
+            faqItem.classList.toggle('active');
+            
+            if (faqItem.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.textContent = '−';
+            } else {
+                answer.style.maxHeight = '0';
+                icon.textContent = '+';
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mr.BaNNa - Trade Smarter{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="{% url 'home' %}">MR.BANNA</a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'pricing' %}">Pricing</a></li>
+                <li><a href="{% url 'faq' %}">FAQ</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'pricing' %}" class="btn-access">GET ACCESS</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MENU</h3>
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'pricing' %}">Pricing</a></li>
+                        <li><a href="{% url 'faq' %}">FAQ</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>LEGAL</h3>
+                    <ul>
+                        <li><a href="{% url 'terms' %}">Terms & Conditions</a></li>
+                        <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <p>Mr.BaNNa and its affiliates do not operate as registered financial advisors. The content and services provided by Mr.BaNNa and its website are solely intended for educational purposes and should not be interpreted as financial advice. Trading involves significant risk and may not be suitable for all investors. You could lose all or more than your initial investment.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mr.BaNNa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
